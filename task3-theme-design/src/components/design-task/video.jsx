@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react';
-import video from '../../../static/video/sunset-111204.mp4';
-
+import video from '@site/static/video/sunset-111204.mp4';
+import styles from './styles.module.css';
+import { useColorMode } from '@docusaurus/theme-common';
 export const Video = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(true);
     const videoRef = useRef(null);
-
+    const { colorMode } = useColorMode();
+    const isDarkTheme = colorMode === 'dark';
     const handlePlayPause = () => {
         const video = videoRef.current;
         if (isPlaying) {
@@ -28,6 +30,7 @@ export const Video = () => {
 
     return (
         <div
+        className={isDarkTheme ? styles.backgroundColorDark : styles.backgroundColor}
             style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -35,8 +38,6 @@ export const Video = () => {
                 height: '300px',
                 width: '600px',
                 borderRadius: '30px',
-                backgroundColor: 'white',
-                border: '2px solid black',
                 position: 'relative',
                 zIndex: 1,
                 margin: 'auto',
