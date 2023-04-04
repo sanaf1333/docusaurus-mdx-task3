@@ -1,4 +1,14 @@
-import Highlight from '../components/design-task/video-d3'
+import {VideoLabel, HeadingTag, TextTag} from '../components/design-task/heading-message';
+import {Layout} from '../components/design-task/layout';
+import {Video} from '../components/design-task/video';
+import video from '../../static/video/sunset-111204.mp4';
 
-<Highlight color="#25c2a0">Docusaurus green</Highlight>
+<Layout color="#6ef0c0">
+    <VideoLabel>
+        <HeadingTag>Evaluation of your skills</HeadingTag>
+        <TextTag>How to evaluate skills?</TextTag>
+    </VideoLabel>
+    <Video>{video}</Video>
+</Layout>
 
+# markdown page
